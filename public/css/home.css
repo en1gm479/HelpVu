@@ -1,0 +1,246 @@
+body {
+    background: rgb(238, 235, 230);
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.e {
+    display: inline-block;
+    padding-left: 30px;
+
+}
+
+p {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+
+.b {
+    width: 100%;
+    background-color: none;
+    border: 2px solid rgb(250, 66, 66);
+    height: 140px;
+    text-align: left;
+
+    font-size: 95px;
+    margin: 0;
+    padding: 0;
+    color: red;
+    text-decoration: sandybrown;
+
+
+}
+
+.a {
+    background-color: black;
+    color: white;
+    font-size: 36px;
+    width: 100%;
+    height: 60px;
+    text-align: left;
+
+}
+
+ul {
+    position: relative;
+    top: 9px;
+
+
+}
+
+.c {
+    width: 100%;
+    height: 600px;
+    background: no-repeat;
+    background-size: 100%;
+    background-image: url('../img/img5.jpg');
+    text-align: center;
+    position: relative;
+
+}
+
+.f {
+    width: 434px;
+    justify-items: center;
+    border: 2px solid red;
+    position: relative;
+    top: 1rem;
+    right: -35rem;
+    color: powderblue;
+}
+
+.g {
+    height: 250px;
+    width: 200px;
+
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    color: #1b463c;
+    background-color: cornsilk;
+}
+
+button {
+
+    font-size: 24px;
+    background-color: steelblue;
+    margin-top: 4px;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.help {
+    color: red;
+}
+
+.i {
+    height: 600px;
+
+    width: 334px;
+    border: 2px solid black;
+
+    font-size: 30px;
+    color: cornsilk;
+    position: relative;
+    top: 20px;
+    left: 10px;
+
+}
+
+.covid {
+    font-size: 40px;
+}
+
+.h {
+    background-image: url('../img/img6.jpg');
+    background-size: 1450px 650px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 650px;
+}
+
+.j {
+    background-color: darkgray;
+    display: flex;
+    height: 450px;
+    flex-direction: row;
+}
+
+.k {
+    text-align: center;
+    height: 432px;
+    width: 334px;
+    border: 2px solid rgb(22, 22, 26);
+    background-color: white;
+    position: relative;
+    left: 20px;
+    top: 5px;
+}
+
+.l {
+    height: 432px;
+
+    width: 434px;
+    border: 2px solid black;
+
+    font-size: 30px;
+    color: rgb(14, 13, 11);
+    position: relative;
+    top: 5px;
+    left: 10px;
+    background-color: white;
+    margin-left: 40px;
+
+}
+
+.m {
+    text-align: center;
+    height: 432px;
+    width: 234px;
+    border: 2px solid rgb(22, 22, 26);
+    background-color: rgb(236, 218, 53);
+    position: relative;
+    left: 20px;
+    top: 5px;
+}
+
+.n {
+    text-align: center;
+    background: black;
+    color: white;
+    width: 100%;
+    height: 800px;
+
+
+}
+
+.links {
+    display: inline-block;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: unset;
+    justify-content: center;
+    margin: 19px;
+    background-color: white;
+    color: saddlebrown;
+    font-size: 35px;
+    padding: 30px;
+    text-decoration:none;
+
+}
+
+.o {
+    align-self: center;
+    
+}
+
+.p {
+    background: burlywood;
+    color: black;
+    text-align: center;
+    height: 484px;
+    font-size: 25px;
+}
+
+.q {
+    height: 334px;
+    width: 100%;
+    background-image: url('../img/img9.jpg');
+    background-size: 100% 334px;
+}
+
+.foot {
+    height: 60px;
+    width: 100%;
+    text-align: center;
+    padding: 20px;
+    font-size: 30px;
+    background-color: black;
+    color: white;
+}
+
+.z {
+    background-color: black;
+    color: whitesmoke;
+    position: fixed;
+    right: 0;
+    top: 0;
+
+}
+
+span.helpvu {
+    position: relative;
+    top: -30px;
+}
+.stateini{
+    font-size: 3rem;
+}
+#state{
+    text-decoration: none;
+}
