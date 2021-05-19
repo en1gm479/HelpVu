@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | HelpVu</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=KoHo:wght@300&display=swap');
+        * {
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'KoHo', sans-serif;
+            background: url(../img/21.jpg) center center no-repeat;
+            /* background-size: cover; */
+            color: white;
+        }
+
+        .container {
+            border-radius: 22px;
+            z-index: -1;
+    opacity: 0.6;
+    background: #06066b;
+    text-align: center;
+    width: 42%;
+    height: 81vh;
+    color: white;
+    border: 7px solid #0c96d2;
+    position: absolute;
+    top: 11%;
+    left: 24%;
+
+        }
+
+        .container h1 {
+            /* font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; */
+    position: relative;
+    top: 17px;
+    width: 50%;
+    display: inline-block;
+    font-size: 50px;
+    /* border-bottom: 5px solid purple; */
+    margin-bottom: 12px;
+    padding: 12px 39px;
+        }
+
+        .box {
+            width: 76%;
+    /* margin: auto; */
+    margin: 42px 60px;
+    position: relative;
+    left: 2rem;
+    border-bottom: 3px solid rgb(15, 161, 197);
+        }
+
+        .box input {
+            font-family: 'KoHo', sans-serif;
+            color: #ffffff;
+    background: none;
+    width: 99%;
+    padding: 11px 8px;
+    font-size: 22px;
+    border: none;
+    outline: none;
+        }
+
+
+        .btn {
+            font-family: 'KoHo', sans-serif;
+            color: white;
+            cursor: pointer;
+            outline: none;
+            margin: 12px 0;
+            padding: 10px 21px;
+            border: 2px solid rgb(6, 210, 236);
+            border-radius: 10px;
+            font-size: 14px;
+            background: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            opacity: 0.5;
+            color: rgb(7, 117, 180);
+            background: white;
+            font-weight: bolder;
+            font-size: 1.2rem;
+        }
+        .form{
+            margin: 100px 2px;
+        }
+        ::placeholder {
+            /* font-weight: bold; */
+  color: rgb(235, 231, 231);
+  opacity: 1;
+}
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Contact Us</h1>
+        <p>Help Us to Improve</p>
+        <form class="form" action="" method="post">
+            <div class="box">
+                <input type="text" placeholder="Enter your Name" id="name">
+            </div>
+            <div class="box">
+                <input type="email" placeholder="Enter your E-Mail" id="email">
+            </div>
+            <div class="box"><input type="text" name="msg" id="msg" placeholder="Enter your Message">
+            </div>
+            <input type="submit" class="btn" id="btn"><br>
+        </form>
+    </div>
+</body>
+
+</html>

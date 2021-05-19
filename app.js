@@ -48,6 +48,14 @@ app.get('/map',(req,res)=>{
 res.render('map.ejs');
 })
 
+app.get('/contact',(req,res)=>{
+    res.render('contact.ejs');
+    })
+
+app.get('/about',(req,res)=>{
+    res.render('about.ejs');
+    })
+
 app.get('/bed',(req,res)=>{
     res.render('bed_reg.ejs');
 })
