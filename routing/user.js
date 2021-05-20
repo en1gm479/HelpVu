@@ -72,14 +72,14 @@ router.post('/login', (req, res) => {
                     if(data){
                         res.send("login successful");
                     }else{
-                        err.push({ msg: 'Password does not matches' })
+                       // err.push({ msg: 'Password does not matches' })
                         res.render('../views/login')
                     }
 
                 });
             }
             else{
-                err.push({ msg: 'Phone Number is not registered' })
+               // err.push({ msg: 'Phone Number is not registered' })
                     res.render('../views/login')
             }
         })

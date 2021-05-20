@@ -60,6 +60,10 @@ app.get('/bed',(req,res)=>{
     res.render('bed_reg.ejs');
 })
 
+app.get('/status',(req,res)=>{
+    res.render('hospitalstatus.ejs');
+})
+
 app.get('/updation',(req,res)=>{
     res.render('hospital_updation.ejs');
 })
