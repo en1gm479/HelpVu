@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=KoHo:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap');
+.a {
+    border-radius: 35px;
+padding: 3rem;
+height: 80.5vh;
+width: 65%;
+top: 2rem;
+border: 7px solid #1398e0;
+text-align: center;
+position: relative;
+right: -28rem;
+background: #0b2a82;
+opacity: 0.6;
+}
+
+body {
+    font-family: 'Oxygen', sans-serif;
+    font-family: 'KoHo', sans-serif;
+    background-image: url('../img/15.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+p {
+    color: seashell;
+padding: 2rem;
+font-size: 1.2rem;
+}
+
+.d {
+    
+    position: relative;
+   top: 6rem;
+    background-color: rgb(20, 14, 14);
+    text-align: center;
+    font-size: 10px;
+    color: white;
+    width: 100%;
+}
+h2{
+    font-size: 3rem;
+}
