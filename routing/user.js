@@ -1,6 +1,8 @@
 const express = require('express')
 const router = express.Router();
+const flash = require('connect-flash');
 const mongoose = require('mongoose')
+const passport = require('passport');
 const users = require('../models/users')
 const bcrypt = require('bcryptjs');
 
@@ -23,12 +25,16 @@ router.post('/register', (req, res) => {
     if (password !== password2) {
         err.push({ msg: 'Password do not match.' });
     }
+    if (num.length != 10) {
+        err.push({ msg: 'Please Enter a valid 10 digit Phone Number' });
+    }
     if (password.length < 6) {
         err.push({ msg: 'Password should be atleast 6 character long.' });
     }
 
     if (err.length > 0) {
-        res.render('../views/register', { err })
+
+        res.render('../views/register', { name: name, email: email, num: num, err: err })
     }
     else {
         users.findOne({ num: num })
@@ -48,7 +54,9 @@ router.post('/register', (req, res) => {
                         bcrypt.hash(newUser.password, salt, (err, hash) => {
                             if (err) throw err;
                             newUser.password = hash;
+                            console.log(newUser);
                             newUser.save()
+                                // req.flash('success_msg','You have now registered!')
                                 .then(user => {
                                     res.redirect('/user/login');
 
@@ -61,29 +69,20 @@ router.post('/register', (req, res) => {
     }
 });
 
-router.post('/login', (req, res) => {
-    const { num, password } = req.body;
-    err = [];
-    users.findOne({num:num})
-        .then(user =>{
-            if(user){
-                bcrypt.compare(password, user.password, function(err, data) {
-                    // if(error) throw error;
-                    if(data){
-                        res.send("login successful");
-                    }else{
-                       // err.push({ msg: 'Password does not matches' })
-                        res.render('../views/login')
-                    }
-
-                });
-            }
-            else{
-               // err.push({ msg: 'Phone Number is not registered' })
-                    res.render('../views/login')
-            }
-        })
+router.post('/login', (req, res, next) => {
+    passport.authenticate('local', {
+        successRedirect: '/beds',
+        failureRedirect: '/user/login',
+        failureFlash: true,
+    })(req, res, next);
 
 });
+
+//logout
+router.get('/logout', (req, res) => {
+    req.logout();
+    req.flash('success_msg', 'Now logged out');
+    res.redirect('/user/login');
+})
 
 module.exports = router;
