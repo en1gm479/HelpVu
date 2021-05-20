@@ -60,6 +60,9 @@ app.get('/bed',(req,res)=>{
     res.render('bed_reg.ejs');
 })
 
+app.get('/updation',(req,res)=>{
+    res.render('hospital_updation.ejs');
+})
 
 app.use('',(req,res)=>{
 res.send('404! File not Found')
