@@ -244,3 +244,38 @@ span.helpvu {
 #state{
     text-decoration: none;
 }
+.frame_container{
+    border:3px solid rgb(83, 19, 19);
+   height:600px;
+   background-color:darkgray;
+}
+.frame{
+   display:flex;
+   align-items: center;
+   justify-content: space-around;
+}
+.iframe{
+   width: 450px;
+   height:500px;
+   margin:15px;
+   margin-bottom: 0px;   
+}
+.toclick{
+   /* border:2px solid black; */
+   height:50px;
+   margin:15px;
+   margin-top: 0px;
+   font-size: 2rem;
+   display:flex;
+   justify-content: space-around;
+   align-items: center;
+}
+._page:hover{
+     background-color: black;
+     border-radius: 8px;
+     color: white;
+     height:40px;
+     width:100px;
+     text-decoration: none;
+     font-family: 'Balsamiq Sans', cursive;
+}
