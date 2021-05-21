@@ -53,8 +53,8 @@
             display:flex;
             flex-direction: row;
             height: 360px;
-            width: 600px;
-            margin : 20px 200px;
+            width: 677px;
+            margin : 10px 104px;
             padding: 10px 50px;
             /* border: 2px solid white; */
             border-radius: 30px;
@@ -74,7 +74,7 @@
             text-align: center;
             font-size: 10px;
             color: rgb(36, 32, 32);
-            width: 1570px;
+            width: 677px;
         }
         #navbar{
     display: flex;
@@ -130,6 +130,15 @@
     color: black;
     background-color :white;
 }
+.status{
+    margin-top: 10px;
+    
+}
+.table{
+    border:4px solid black;
+    margin:5px;
+    font-weight: bolder;
+}
     </style>
 </head>
 
@@ -152,6 +161,7 @@
             <input type="text" name="text" class="search" placeholder="Hospital Name or ID!">
             <input type="submit" name="submit" class="submit" value="Search">
         </form>
+        <h1 class="status" style="text-align: center; "> HOSPITAL STATUS</h1>
         <div class="b">
             <% if(data.length < 1){ %>
                <p style="font-size: 2rem;"> Sorry, nothing to show :( </p>
@@ -160,10 +170,6 @@
             <% data.forEach(function(info){ %>
             <table class="table">
                 <thead>
-                    <tr>
-                        <th scope="col" colspan="3" style="text-align: center; font-size: 30px;">STATUS</th>
-
-                    </tr>
                 </thead>
                 <tbody class="block" style="color: black;">
 
@@ -207,7 +213,7 @@
         </div>
     </div>
     <footer class="d">
-        <h1 style="font-size: 30px;"> &copy @SERVER_MONKS </h1>
+        <h1 style="font-size: 30px; color:azure;"> &copy @SERVER_MONKS </h1>
         <h2 style="font-size: 20px; color: red;">LOCATION: INDIA</h2>
     </footer>
 </body>
