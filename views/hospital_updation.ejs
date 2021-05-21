@@ -10,35 +10,35 @@
 <body>
      <div class="regform"><h1> HOSPITAL (Please Update Your INFO) </h1></div>
      <div class="main">
-         <form action="/updation" method="POST">
-            <% data.forEach(function(info){ %>
+         <% data.forEach(function(info){ %>
+         <form action="/updation/<%=info.name %>" method="POST">
              <div id="name">
                  <h2 class="name">No. Of Beds Present:</h2>
-                 <input class="beds" type="text" placeholder="" value="<%= info.beds_present %>">
+                 <input class="beds" type="text" name="beds_present" placeholder="" value="<%= info.beds_present %>">
              </div>
 
              <h2 class="name">No. Of Vacant Beds Available: </h2>
-             <input class="vacant" type="text" value="<%= info.beds_vacant %>">
+             <input class="vacant" type="text" name="beds_vacant" value="<%= info.beds_vacant %>">
 
              <h2 class="name">No. Of Emergency Bed Available:</h2>
-             <input class="emer" type="text" value="<%= info.em_beds_present %>">
+             <input class="emer" type="text" name="em_beds_present" value="<%= info.em_beds_present %>">
 
              <h2 class="name">Vacant Emergency Bed Available:</h2>
-             <input class="emervacant" type="text" value="<%= info.em_beds_vacant %>">
+             <input class="emervacant" type="text" name="em_beds_vacant" value="<%= info.em_beds_vacant %>">
 
             <h2 class="name">Corona Testing Available:</h2>
             <label for="coronatestidY" class="radio">
-                 <input class="upto" type="radio" value="Yes" name="Corona Test" id="coronatestidY"> Yes
+                 <input class="upto" type="radio" value="Yes" name="covid_test" id="coronatestidY"> Yes
              </label>
              <label for="coronatestN" class="radio">
-                 <input class= "upto" type="radio" value="No" name="Corona Test" id="coronatestidN"> No
+                 <input class= "upto" type="radio" value="No" name="covid_test" id="coronatestidN"> No
              </label>
 
              <h2 class="name">Amoung Of Oxygen Required (daily in litres):</h2>
-             <input class="amoung" type="text" value="<%= info.oxygen_req %>">
+             <input class="amoung" type="text" name="oxygen_req" value="<%= info.oxygen_req %>">
 
              <h2 class="name">Amoung Of Oxygen Get (today in litres):</h2>
-             <input class="amoungoxy" type="text" value="<%= info.oxygen_av %>">
+             <input class="amoungoxy" type="text" name="oxygen_av" value="<%= info.oxygen_av %>">
 
              <button>SUBMIT</button>
              <% }) %>

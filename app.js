@@ -82,7 +82,7 @@ app.get('/status', (req, res) => {
     });
 })
 app.post('/search', (req, res) => {
-    hosp_details.find({$or:[{id : req.body.text},{name : req.body.text}]}, function (err, data) {
+    hosp_details.find({$or:[{id : req.body.text},{name : req.body.text.toUpperCase()}]}, function (err, data) {
         if (err) throw err;
         res.render('hospitalstatus.ejs', { data });
     });
@@ -92,10 +92,31 @@ app.post('/search', (req, res) => {
 app.get('/updation/:name' , (req, res) => {
     hosp_details.find({$or:[{name : req.params.name}]}, function (err, data) {
         if (err) throw err;
-        console.log(data);
+        // console.log(data);
         res.render('hospital_updation.ejs', { data });
     });
 
+})
+
+app.post('/updation/:name',(req,res)=>{
+    var newvalues = { $set: {"beds_present": req.body.beds_present, "beds_vacant": req.body.beds_vacant,"em_beds_present":req.body.em_beds_present,"em_beds_vacant":req.body.em_beds_vacant,"covid_test":req.body.covid_test,"oxygen_req":req.body.oxygen_req,"oxygen_av":req.body.oxygen_av } };
+    hosp_details.updateOne({name : req.params.name}, newvalues, function (err, data) {
+        if (err) throw err;
+        // console.log(data);
+        res.redirect('/')
+    });
+})
+
+app.post('/bed_allotment',(req,res)=>{
+    hosp_details.find({}, function (err, data) {
+        if (err) throw err;
+        data.forEach(function(info){
+            if(info.beds_vacant>0){
+                res.render('bed_allotment.ejs', {info });
+            }
+        })
+        res.render('no_bed.ejs');
+    });
 })
 
 app.use('', (req, res) => {
