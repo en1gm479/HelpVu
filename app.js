@@ -71,6 +71,10 @@ app.get('/about', (req, res) => {
     res.render('about.ejs');
 })
 
+app.get('/news', (req, res) => {
+    res.render('news.ejs');
+})
+
 app.get('/bed', ensureAuthenticated, (req, res) => {
     res.render('bed_reg.ejs');
 })

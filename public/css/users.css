@@ -3,7 +3,7 @@
     padding: 0;
     }
     body{
-    background: url(../img/7.jpg) no-repeat center center fixed;
+    background: url(../img/ars.jpeg) no-repeat center center fixed;
     background-size: cover; 
     /* background-size: 1800px 1050px ; */
     }
@@ -59,4 +59,58 @@
     opacity: 0.5;
     color: purple; 
     background: white; 
+    }
+    #navbar{
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+    
+    #navbar::before{
+        content: "";
+        background-color: black;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        opacity: 0.9;
+    }
+    
+    #logo{
+        margin: 2px 2px;
+        padding: 2px 2px;
+    }
+    
+    #logo img{
+        margin: 10px 2px;
+        padding: 2px 2px;
+        height: 50px;
+        width: 50px;
+    }
+    
+    #navbar ul{
+        display: flex;
+        margin: 10px 28px;
+    }
+    
+    #navbar ul li{
+        list-style: none;
+        font-size: 1.2rem;
+    
+    }
+    
+    #navbar ul li a{
+        font-family: 'Balsamiq Sans', cursive;
+        color: white;
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        border-radius: 10px;
+        margin: 2px 14px;
+        padding: 2px 18px;
+    }
+    
+    #navbar ul li a:hover{
+        color: black;
+        background-color :white;
     }
