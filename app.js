@@ -4,16 +4,18 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const passport = require('passport');
 require("./config/passport")(passport);
+// require("./config/passport2")(passport);
 const flash = require('connect-flash');
 const {ensureAuthenticated} = require("./config/auth")
-const hosp_detail = require('./models/hosp_details');
+const {ensureAuthenticated2} = require("./config/auth2")
+// const hosp_details = require('./models/hosp_details');
 
 // express app
 const app = express();
 
 //session cookies
 app.use(session({
-    secret: 'secret',
+    secret: 'hawuiowu83uwhfwdonwu28928hwfpwamdwo',
     resave: true,
     saveUninitialized: true
 }));
@@ -87,7 +89,7 @@ app.get('/status', (req, res) => {
     res.render('hospitalstatus.ejs');
 })
 
-app.get('/updation', (req, res) => {
+app.get('/updation',ensureAuthenticated2, (req, res) => {
     res.render('hospital_updation.ejs');
 })
 
