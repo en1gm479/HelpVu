@@ -39,19 +39,24 @@
         .a {
             background-image: url('../img/img15.webp');
             height: 677px;
-            width: 1570px;
+            width: 100%;
             background-size: 1366px 768px;
         }
 
         * {
             margin: 0;
             padding: 0;
+            color: black;
         }
 
         .b {
+            display:flex;
+            flex-direction: row;
             height: 360px;
-            width: 420px;
-            border: 2px solid white;
+            width: 600px;
+            margin : 20px 200px;
+            padding: 10px 50px;
+            /* border: 2px solid white; */
             border-radius: 30px;
             position: relative;
             left: 15px;
@@ -64,10 +69,11 @@
         }
 
         .d {
+           
             background-color: rgb(20, 14, 14);
             text-align: center;
             font-size: 10px;
-            color: white;
+            color: rgb(36, 32, 32);
             width: 1570px;
         }
     </style>
@@ -75,13 +81,16 @@
 
 <body>
     <div class="a">
-        <form action="/form/submit" method="GET">
+        <form action="/search" method="POST">
             <input type="text" name="text" class="search" placeholder="Hospital Name or ID!">
             <input type="submit" name="submit" class="submit" value="Search">
         </form>
         <div class="b">
-
+            <% if(data.length < 1){ %>
+               <p style="font-size: 2rem;"> Sorry, nothing to show :( </p>
+            <% }%>
             
+            <% data.forEach(function(info){ %>
             <table class="table">
                 <thead>
                     <tr>
@@ -89,43 +98,45 @@
 
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row" class="despo">1</th>
-                        <td class="despo">Name:</td>
-                        <td class="despo">AIIMS DELHI</td>
+                <tbody class="block" style="color: black;">
 
+                        <tr>
+                            <th scope="row" class="despo">1</th>
+                            <td class="despo">Name:</td>
+                        <td class="despo"><%= info.name %></td>
+                        
                     </tr>
                     <tr>
                         <th scope="row" class="despo">2</th>
                         <td class="despo">Hospital ID:</td>
-                        <td class="despo"> SHASHANK6</td>
-
+                        <td class="despo"> <%= info.id %></td>
+                        
                     </tr>
                     <tr>
                         <th scope="row" class="despo">3</th>
                         <td class="despo">No. of Vacant Beds:</td>
-                        <td class="despo">160</td>
+                        <td class="despo"><%= info.beds_vacant %></td>
                     </tr>
                     <tr>
                         <th scope="row" class="despo">4</th>
                         <td class="despo">Hospital Adress:</td>
-                        <td class="despo">Chor Bazar, DELHI</td>
+                        <td class="despo"><%= info.address %></td>
                     </tr>
                     <tr>
                         <th scope="row" class="despo">5</th>
                         <td class="despo">CoVid-19 Testing:</td>
-                        <td class="despo">Available</td>
+                        <td class="despo"><%= info.covid_test %></td>
                     </tr>
                     <tr>
                         <th scope="row" class="despo">6</th>
-                        <td class="despo">Oxygen Cylinders:</td>
-                        <td class="despo">Available</td>
+                        <td class="despo">Vaccination available:</td>
+                        <td class="despo"><%= info.vaccination %></td>
                     </tr>
-
+                    
                 </tbody>
             </table>
-           
+            
+            <% }) %>
         </div>
     </div>
     <footer class="d">

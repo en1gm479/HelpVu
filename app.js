@@ -6,9 +6,9 @@ const passport = require('passport');
 require("./config/passport")(passport);
 // require("./config/passport2")(passport);
 const flash = require('connect-flash');
-const {ensureAuthenticated} = require("./config/auth")
-const {ensureAuthenticated2} = require("./config/auth2")
-// const hosp_details = require('./models/hosp_details');
+const { ensureAuthenticated } = require("./config/auth")
+const { ensureAuthenticated2 } = require("./config/auth2")
+const hosp_details = require('./models/hosp_details');
 
 // express app
 const app = express();
@@ -56,16 +56,6 @@ app.get('/', (req, res) => {
 
 app.use('/user', require('./routing/user'))
 
-app.get('/hospital_show', (req, res) => {
-    hosp_detail.find()
-        .then((result) => {
-            res.render('hospital_show', { user: result });
-        })
-        .catch((err) => {
-            console.log(err)
-        })
-
-})
 
 app.use('/hospital', require('./routing/hospital'))
 
@@ -81,16 +71,31 @@ app.get('/about', (req, res) => {
     res.render('about.ejs');
 })
 
-app.get('/bed',ensureAuthenticated, (req, res) => {
+app.get('/bed', ensureAuthenticated, (req, res) => {
     res.render('bed_reg.ejs');
 })
 
 app.get('/status', (req, res) => {
-    res.render('hospitalstatus.ejs');
+    hosp_details.find({}, function (err, data) {
+        if (err) throw err;
+        res.render('hospitalstatus.ejs', { data });
+    });
 })
+app.post('/search', (req, res) => {
+    hosp_details.find({$or:[{id : req.body.text},{name : req.body.text}]}, function (err, data) {
+        if (err) throw err;
+        res.render('hospitalstatus.ejs', { data });
+    });
+})
+// ensureAuthenticated2
 
-app.get('/updation',ensureAuthenticated2, (req, res) => {
-    res.render('hospital_updation.ejs');
+app.get('/updation/:name' , (req, res) => {
+    hosp_details.find({$or:[{name : req.params.name}]}, function (err, data) {
+        if (err) throw err;
+        console.log(data);
+        res.render('hospital_updation.ejs', { data });
+    });
+
 })
 
 app.use('', (req, res) => {

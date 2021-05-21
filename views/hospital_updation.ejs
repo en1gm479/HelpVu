@@ -10,20 +10,21 @@
 <body>
      <div class="regform"><h1> HOSPITAL (Please Update Your INFO) </h1></div>
      <div class="main">
-         <form>
+         <form action="/updation" method="POST">
+            <% data.forEach(function(info){ %>
              <div id="name">
-                 <h2 class="name">No. Of Beds Available:</h2>
-                 <input class="beds" type="text" placeholder="">
+                 <h2 class="name">No. Of Beds Present:</h2>
+                 <input class="beds" type="text" placeholder="" value="<%= info.beds_present %>">
              </div>
 
              <h2 class="name">No. Of Vacant Beds Available: </h2>
-             <input class="vacant" type="text" placeholder="">
+             <input class="vacant" type="text" value="<%= info.beds_vacant %>">
 
              <h2 class="name">No. Of Emergency Bed Available:</h2>
-             <input class="emer" type="text" placeholder="">
+             <input class="emer" type="text" value="<%= info.em_beds_present %>">
 
              <h2 class="name">Vacant Emergency Bed Available:</h2>
-             <input class="emervacant" type="text" placeholder="">
+             <input class="emervacant" type="text" value="<%= info.em_beds_vacant %>">
 
             <h2 class="name">Corona Testing Available:</h2>
             <label for="coronatestidY" class="radio">
@@ -34,12 +35,13 @@
              </label>
 
              <h2 class="name">Amoung Of Oxygen Required (daily in litres):</h2>
-             <input class="amoung" type="text" placeholder="">
+             <input class="amoung" type="text" value="<%= info.oxygen_req %>">
 
              <h2 class="name">Amoung Of Oxygen Get (today in litres):</h2>
-             <input class="amoungoxy" type="text" placeholder="">
+             <input class="amoungoxy" type="text" value="<%= info.oxygen_av %>">
 
              <button>SUBMIT</button>
+             <% }) %>
          </form>
      </div>
 </body>
