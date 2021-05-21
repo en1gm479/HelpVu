@@ -92,5 +92,5 @@ app.get('/updation', (req, res) => {
 })
 
 app.use('', (req, res) => {
-    res.send('404! File not Found')
+    res.render('error404.ejs')
 })
