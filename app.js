@@ -94,5 +94,5 @@ app.get('/updation',ensureAuthenticated2, (req, res) => {
 })
 
 app.use('', (req, res) => {
-    res.send('404! File not Found')
+    res.render('error404.ejs')
 })
