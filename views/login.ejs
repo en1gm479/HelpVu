@@ -15,6 +15,9 @@
     <div class="container">
         <h1>Log In</h1>
         <form action="../user/login" method="post">
+            <% if(success_msg!= '') { %>
+                <p><%=success_msg %> </p>
+                <% } %>
             <div class="box">
                 <i class="fa fa-mobile"></i>
                 <input type="tel" name="num" id="number" placeholder="Enter Your Phone Number" required>
