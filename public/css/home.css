@@ -120,13 +120,24 @@ ul {
 }
 
 .f {
-    width: 434px;
+    /* width: 434px;
     justify-items: center;
     border: 2px solid red;
     position: relative;
     top: 1rem;
     right: -35rem;
-    color: powderblue;
+    color: powderblue; */
+    width: 887px;
+    padding: -5px;
+    font-family: 'Balsamiq Sans', cursive;
+    height: 275px;
+    justify-items: center;
+    /* border: 2px solid red; */
+    position: relative;
+    top: 5rem;
+    right: -20rem;
+    color:#f6feb7;
+    font-size: 1.3rem;
 }
 
 .g {
@@ -150,7 +161,10 @@ button {
 }
 
 .help {
-    color: red;
+    /* color: red */
+    color: #00ffad;
+    font-size: 5rem;
+    margin-bottom: 2rem;
 }
 
 .i {
