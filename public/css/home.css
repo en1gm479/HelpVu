@@ -208,7 +208,7 @@ button {
     color: rgb(14, 13, 11);
     position: relative;
     top: 5px;
-    left: 10px;
+    left: 105px;
     background-color: white;
     margin-left: 40px;
 
@@ -221,7 +221,7 @@ button {
     border: 2px solid rgb(22, 22, 26);
     background-color: rgb(236, 218, 53);
     position: relative;
-    left: 20px;
+    left: 240px;
     top: 5px;
 }
 
@@ -252,7 +252,7 @@ button {
 
 .o {
     align-self: center;
-    
+    text-decoration: none;
 }
 
 .p {
