@@ -49,9 +49,8 @@ router.get('/login', (req, res) => {
 //     });
 
     router.post('/login', (req, res, next) => {
-        console.log(req.body);
         passport.authenticate('hospital', {
-            successRedirect: '/updation',
+            successRedirect: `/updation/${req.body.id}`,
             failureRedirect: '/hospital/login',
             failureFlash: true,
         })(req, res, next);
@@ -61,7 +60,7 @@ router.get('/login', (req, res) => {
     router.get('/logout', (req, res) => {
         req.logout();
         req.flash('success_msg', 'Now logged out');
-        res.redirect('/hospital/login');
+        res.redirect('/');
     })
 
     module.exports = router;

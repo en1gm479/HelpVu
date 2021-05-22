@@ -11,7 +11,8 @@
      <div class="regform"><h1> HOSPITAL (Please Update Your INFO) </h1></div>
      <div class="main">
          <% data.forEach(function(info){ %>
-         <form action="/updation/<%=info.name %>" method="POST">
+            <form action="/updation/<%=info.name %>" method="POST">
+                <h2 style="text-align: center;">Welcome <%=info.name %> </h2>
              <div id="name">
                  <h2 class="name">No. Of Beds Present:</h2>
                  <input class="beds" type="text" name="beds_present" placeholder="" value="<%= info.beds_present %>">

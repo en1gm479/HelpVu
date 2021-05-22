@@ -54,7 +54,7 @@ router.post('/register', (req, res) => {
                         bcrypt.hash(newUser.password, salt, (err, hash) => {
                             if (err) throw err;
                             newUser.password = hash;
-                            console.log(newUser);
+                            // console.log(newUser);
                             newUser.save()
                                 // req.flash('success_msg','You have now registered!')
                                 .then(user => {
@@ -70,7 +70,7 @@ router.post('/register', (req, res) => {
 });
 
 router.post('/login', (req, res, next) => {
-    passport.authenticate('user', {
+    passport.authenticate('local', {
         successRedirect: '/bed',
         failureRedirect: '/user/login',
         failureFlash: true,

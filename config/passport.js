@@ -5,18 +5,18 @@ const bcrypt = require('bcryptjs');
 
 
 module.exports = function (passport) {
-    passport.use('user', new LocalStrategy({ usernameField: 'num', passwordField: 'password' },
-        (num, password, done) => { 
+    passport.use('local', new LocalStrategy({ usernameField: 'num', passwordField: 'password' },
+        (num, password, done) => {
             //match user
             users.findOne({ num: num })
                 .then((user) => {
+
                     if (!user) {
                         return done(null, false, { message: 'that Phone Number is not registered' });
                     }
                     //match pass
                     bcrypt.compare(password, user.password, (err, isMatch) => {
                         if (err) throw err;
-
                         if (isMatch) {
                             return done(null, user);
                         } else {
@@ -28,6 +28,7 @@ module.exports = function (passport) {
         })
 
     )
+    
 
     //hospital validation
     passport.use('hospital', new LocalStrategy({ usernameField: 'id', passwordField: 'password' },
@@ -37,10 +38,12 @@ module.exports = function (passport) {
                 id: id
             }).then(user => {
                 if (!user) {
+
                     return done(null, false, { message: 'The Id is not registered' });
                 }
-
+                
                 // Match password
+                console.log(password,user.password)
                 if (password === user.password) {
                     isMatch = true;
                 }
@@ -53,7 +56,7 @@ module.exports = function (passport) {
                 } else {
                     return done(null, false, { message: 'pass incorrect' });
                 }
-                //})
+            
             })
                 .catch(err => console.log(err));
         })
@@ -61,7 +64,7 @@ module.exports = function (passport) {
 
 
     passport.serializeUser((user, done) => {
-        done(null, { _id: user.id, role: user.role });
+        done(null, { _id: user._id, role: user.role });
     });
 
     passport.deserializeUser((login, done) => {

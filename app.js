@@ -4,7 +4,6 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const passport = require('passport');
 require("./config/passport")(passport);
-// require("./config/passport2")(passport);
 const flash = require('connect-flash');
 const { ensureAuthenticated } = require("./config/auth")
 const { ensureAuthenticated2 } = require("./config/auth2")
@@ -95,9 +94,9 @@ app.post('/search', (req, res) => {
 })
 
 
-// ensureAuthenticated2
-app.get('/updation/:name' , (req, res) => {
-    hosp_details.find({$or:[{name : req.params.name}]}, function (err, data) {
+// 
+app.get('/updation/:id',ensureAuthenticated2 , (req, res) => {
+    hosp_details.find({$or:[{id : req.params.id}]}, function (err, data) {
         if (err) throw err;
         // console.log(data);
         res.render('hospital_updation.ejs', { data });
