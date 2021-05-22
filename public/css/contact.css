@@ -133,6 +133,7 @@ body {
 }
 
 #navbar ul li a{
+    background-color: rgba(119, 203, 241, 0.349);
     font-family: 'Balsamiq Sans', cursive;
     color: white;
     display: block;

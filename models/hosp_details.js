@@ -58,10 +58,14 @@ const hospSchema = new Schema({
         type: String,
         required: true
     },
-    role:{
+    role: {
         type: String,
-        default: 'hospital' 
-        },
+        default: 'hospital'
+    },
+    tel: {
+        type: Number,
+        required: true
+    },
 });
 
 const hosp_details = mongoose.model('hosp_details', hospSchema);

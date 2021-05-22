@@ -22,7 +22,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-//use flash
+//using flash
 app.use(flash());
 app.use((req, res, next) => {
     res.locals.success_msg = req.flash('success_msg');
@@ -50,6 +50,7 @@ app.listen(3000, () => {
 });
 
 //routing
+
 app.get('/', (req, res) => {
     res.render('index')
 });
@@ -85,14 +86,16 @@ app.get('/status', (req, res) => {
         res.render('hospitalstatus.ejs', { data });
     });
 })
+
 app.post('/search', (req, res) => {
     hosp_details.find({$or:[{id : req.body.text},{name : req.body.text.toUpperCase()}]}, function (err, data) {
         if (err) throw err;
         res.render('hospitalstatus.ejs', { data });
     });
 })
-// ensureAuthenticated2
 
+
+// ensureAuthenticated2
 app.get('/updation/:name' , (req, res) => {
     hosp_details.find({$or:[{name : req.params.name}]}, function (err, data) {
         if (err) throw err;

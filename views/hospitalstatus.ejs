@@ -38,7 +38,7 @@
 
         .a {
             background-image: url('../img/img15.webp');
-            height: 677px;
+            height: 800px;
             width: 100%;
             background-size: 1366px 768px;
         }
@@ -192,8 +192,8 @@
                     </tr>
                     <tr>
                         <th scope="row" class="despo">4</th>
-                        <td class="despo">Hospital Adress:</td>
-                        <td class="despo"><%= info.address %></td>
+                        <td class="despo">No. of Emergency Vacant Beds:</td>
+                        <td class="despo"><%= info.em_beds_vacant %></td>
                     </tr>
                     <tr>
                         <th scope="row" class="despo">5</th>
@@ -205,7 +205,16 @@
                         <td class="despo">Vaccination available:</td>
                         <td class="despo"><%= info.vaccination %></td>
                     </tr>
-                    
+                    <tr>
+                        <th scope="row" class="despo">7</th>
+                        <td class="despo">Contact Number:</td>
+                        <td class="despo"><%= info.tel %></td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="despo">8</th>
+                        <td class="despo">Hospital Adress:</td>
+                        <td class="despo"><%= info.address %></td>
+                    </tr>
                 </tbody>
             </table>
             
