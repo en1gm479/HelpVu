@@ -67,6 +67,10 @@ app.get('/contact', (req, res) => {
     res.render('contact.ejs');
 })
 
+app.post('/contact', (req, res) => {
+    res.redirect('/');
+})
+
 app.get('/about', (req, res) => {
     res.render('about.ejs');
 })
