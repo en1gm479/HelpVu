@@ -22,3 +22,15 @@ number of patients, beds, and oxygen reserves so that government and patients ca
 make arrangements accordingly.
  
 
+<h2>Home Page</h2>
+<img src = "./public/img/proj1.jpeg">
+
+<h2>Live Map Page</h2>
+<img src = "./public/img/proj3.jpeg">
+
+<h2>News Page</h2>
+<img src = "./public/img/proj2.jpeg">
+
+<br>
+<h4>Regards,<br>
+Team Server_Monk</h4>
